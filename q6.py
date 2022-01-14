@@ -1,11 +1,11 @@
 def solution(N, stages):
     failure = {}
-    a = len(stages)
+    players = len(stages)
     for i in range(1,N+1):
-        if a != 0:
+        if players != 0:
             fail = stages.count(i)
-            failure[i] = fail / a
-            a -= fail
+            failure[i] = fail / players
+            players -= fail
         else:
             failure[i] = 0
     return sorted(failure, key=lambda x: failure[x], reverse=True)
